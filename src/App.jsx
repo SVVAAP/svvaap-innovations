@@ -7,6 +7,7 @@ import Services from './components/Services.jsx';
 import Contact from './components/Contact';
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage.jsx";
+import Ideogram from './components/ideogram/home.jsx';
 import "./index.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/ideogram" element={<Ideogram />} />
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>

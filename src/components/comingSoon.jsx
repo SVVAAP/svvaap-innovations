@@ -59,7 +59,7 @@ function Soon() {
                 <p>
                     WhatsApp:
                     <a href="https://wa.me/7899535703?text=Hii%2C%20I%20need%20more%20info%20about%20Svvaap%20service%21" target="_blank">
-                        +91-77899535703
+                        +91-7899535703
                     </a>
                 </p>
 

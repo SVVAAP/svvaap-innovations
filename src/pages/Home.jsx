@@ -9,14 +9,14 @@ function Home(props)  {
 
   return (
 
-  <div>
-    <Soon/>
-    {/* <NavBar />
+  <>
+    {/* <Soon/> */}
+    <NavBar />
     
     <Hero/>
-    <Footer/> */}
+    <Footer/>
    
-  </div>
+  </>
 );
 }
 
