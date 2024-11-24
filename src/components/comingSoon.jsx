@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../img/logo_light.png'; // replace with the actual path to your logo
-// import developer1 from 'https://media.licdn.com/dms/image/v2/D5603AQEbOr3huxeb2w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1695266645090?e=1730332800&v=beta&t=h89jEJRSMuUjZRV6kbII50x_vzZiykk75hmdUPUys7g'; // replace with the actual path to developer 1 photo
-// import developer2 from 'https://media.licdn.com/dms/image/v2/D5603AQEBLZRtyy8C1g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1693617179786?e=1730332800&v=beta&t=1B2ejgEB2QHw3AUznbxHjRkSLtFFnIA3h2rnbpyauTY'; // replace with the actual path to developer 2 photo
+import developer1 from 'https://media.licdn.com/dms/image/v2/D5603AQEbOr3huxeb2w/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1695266645090?e=1730332800&v=beta&t=h89jEJRSMuUjZRV6kbII50x_vzZiykk75hmdUPUys7g'; // replace with the actual path to developer 1 photo
+import developer2 from 'https://media.licdn.com/dms/image/v2/D5603AQEBLZRtyy8C1g/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1693617179786?e=1730332800&v=beta&t=1B2ejgEB2QHw3AUznbxHjRkSLtFFnIA3h2rnbpyauTY'; // replace with the actual path to developer 2 photo
 
 function Soon() {
     return (
