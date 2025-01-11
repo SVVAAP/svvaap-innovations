@@ -1,109 +1,74 @@
+import React from 'react';
+import { ArrowRightIcon, CodeBracketIcon, DevicePhoneMobileIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
-import React, { useEffect, useState } from 'react';
-
-// Shared Tailwind CSS class strings
-const SHARED_CLASSES = {
-  textMutedForeground: 'text-[var(--muted-foreground)]',
-  textSm: 'text-sm',
-  textXs: 'text-xs',
-  textCenter: 'text-center',
-  flex: 'flex',
-  flexCol: 'flex-col',
-  flexRow: 'flex-row',
-  mdFlexRow: 'md:flex-row',
-  mdW1_2: 'md:w-1/2',
-  mt6: 'mt-6',
-  mdMt0: 'md:mt-0',
-  wFull: 'w-full',
-  hAuto: 'h-auto',
-  rounded: 'rounded',
-  borderT: 'border-t',
-  border: 'border-[var(--border)]',
-  pt4: 'pt-4',
-  spaceX4: 'space-x-4',
-  fontBold: 'font-bold',
-};
-
-const items = [
-  {
-    title: "SIGGRAPH Event",
-    description: "Fireside Chat With NVIDIA CEO Jensen Huang"
-  },
-  {
-    title: "AI",
-    description: "See Jensen Huang Live at HPC Discover 2024"
-  },
-  {
-    title: "Automotive",
-    description: "NVIDIA Wins Autonomous Grand Challenge at CVPR"
-  },
-  {
-    title: "Simulation",
-    description: "NVIDIA Advances Physical AI With the Largest Indoor..."
-  },
-  {
-    title: "Data Center",
-    description: "Latest MLPerf Results Showcase Unprecedented..."
-  }
-];
-
-const interval = 2000;
-
-const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const updateSlider = () => {
-      setCurrentIndex((currentIndex + 1) % items.length);
-    };
-
-    const sliderInterval = setInterval(updateSlider, interval);
-    return () => clearInterval(sliderInterval);
-  }, [currentIndex]);
-
+export default function Hero() {
   return (
-    <div className={`${SHARED_CLASSES.flex} ${SHARED_CLASSES.spaceX4}`}>
-      {items.map((item, index) => (
-        <div key={index} className={SHARED_CLASSES.textCenter}>
-          <h3 className={`${SHARED_CLASSES.textSm} ${SHARED_CLASSES.fontBold}`}>{item.title}</h3>
-          <p className={`${SHARED_CLASSES.textMutedForeground} ${SHARED_CLASSES.textXs}`}>{item.description}</p>
+    <div id="home" className="relative bg-black pt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32">
+        <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-white sm:text-7xl">
+          Building{' '}
+          <span className="relative whitespace-nowrap text-indigo-500">
+            <span className="relative">innovative solutions</span>
+          </span>{' '}
+          for real-world problems
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-gray-300">
+          We develop cutting-edge websites, mobile apps, and AI solutions to help startups and businesses thrive in the digital age.
+        </p>
+        <div className="mt-10 flex justify-center gap-x-6">
+          <a
+            href="#contact"
+            className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-indigo-500 text-white hover:bg-indigo-600 active:bg-indigo-700 focus-visible:outline-indigo-500"
+          >
+            Get Started
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
+          </a>
         </div>
-      ))}
+
+        {/* <div className="mt-36 lg:mt-44">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+            <div className="pt-6">
+              <div className="flow-root rounded-lg bg-gray-800 px-6 pb-8">
+                <div className="-mt-6">
+                  <div className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
+                    <CodeBracketIcon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="mt-8 text-lg font-semibold leading-8 tracking-tight text-white">Web Development</h3>
+                  <p className="mt-5 text-base leading-7 text-gray-400">
+                    Custom websites and web applications built with modern technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="pt-6">
+              <div className="flow-root rounded-lg bg-gray-800 px-6 pb-8">
+                <div className="-mt-6">
+                  <div className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
+                    <DevicePhoneMobileIcon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="mt-8 text-lg font-semibold leading-8 tracking-tight text-white">Mobile Apps</h3>
+                  <p className="mt-5 text-base leading-7 text-gray-400">
+                    Native and cross-platform mobile applications for iOS and Android.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="pt-6">
+              <div className="flow-root rounded-lg bg-gray-800 px-6 pb-8">
+                <div className="-mt-6">
+                  <div className="inline-flex items-center justify-center rounded-md bg-indigo-500 p-3 shadow-lg">
+                    <LightBulbIcon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="mt-8 text-lg font-semibold leading-8 tracking-tight text-white">AI Solutions</h3>
+                  <p className="mt-5 text-base leading-7 text-gray-400">
+                    Intelligent automation and AI-powered features for your business.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </div>
     </div>
   );
-};
-
-const ProgressBar = () => (
-  <div className="w-1/4 h-1 bg-[var(--accent)] rounded-full relative overflow-hidden">
-    <div className="absolute top-0 left-0 h-full bg-[var(--accent-foreground)] animate-loader"></div>
-  </div>
-);
-
-const MainContent = () => (
-  <div className={`${SHARED_CLASSES.flex} ${SHARED_CLASSES.flexCol} ${SHARED_CLASSES.mdFlexRow}`}>
-    <div className={SHARED_CLASSES.mdW1_2}>
-      <h2 className={`${SHARED_CLASSES.textMutedForeground} ${SHARED_CLASSES.textSm}`}>Data Center</h2>
-      <h1 className="text-4xl font-bold">Latest MLPerf Results Showcase Unprecedented Performance</h1>
-      <p className="mt-4 text-lg">
-        The NVIDIA platform, powered by NVIDIA Hopper GPUs and NVIDIA Quantum-2 InfiniBand networking, delivered exceptional AI training performance in the latest MLPerf Training benchmarks.
-      </p>
-      <button className="mt-6 bg-[var(--accent)] text-[var(--accent-foreground)] hover:bg-[var(--accent)]/80 py-2 px-4 rounded">Learn More</button>
-    </div>
-    <div className={`${SHARED_CLASSES.mdW1_2} ${SHARED_CLASSES.mt6} ${SHARED_CLASSES.mdMt0}`}>
-      <img src="https://placehold.co/600x400" alt="Data Center Image" className={`${SHARED_CLASSES.wFull} ${SHARED_CLASSES.hAuto} ${SHARED_CLASSES.rounded}`} />
-    </div>
-  </div>
-);
-
-const App = () => (
-  <div className="bg-[var(--background)] text-[var(--foreground)] p-6">
-    <MainContent />
-    <div className={`mt-6 ${SHARED_CLASSES.flex} justify-between items-center ${SHARED_CLASSES.borderT} ${SHARED_CLASSES.pt4}`}>
-      <Slider />
-      <ProgressBar />
-    </div>
-  </div>
-);
-
-export default App;
-
+}
