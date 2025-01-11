@@ -1,31 +1,72 @@
 import React from 'react';
-import {  DevicePhoneMobileIcon, GlobeAltIcon, CloudIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import { 
+  DevicePhoneMobileIcon, 
+  GlobeAltIcon, 
+  CodeBracketIcon, 
+  ShoppingBagIcon, 
+  PuzzlePieceIcon, 
+  CloudIcon, 
+  PencilIcon, 
+  SparklesIcon, 
+  ChartBarIcon, 
+  LifebuoyIcon 
+} from '@heroicons/react/24/outline';
+
 
 export default function Services() {
   const services = [
-    
     {
       icon: <DevicePhoneMobileIcon className="h-6 w-6" />,
       title: 'Mobile Development',
-      description: 'Native and cross-platform mobile applications that provide seamless user experiences.'
+      description: 'Native and cross-platform mobile applications that provide seamless user experiences.',
     },
-    
     {
       icon: <GlobeAltIcon className="h-6 w-6" />,
       title: 'Digital Transformation',
-      description: 'End-to-end digital solutions to modernize your business operations and improve efficiency.'
+      description: 'End-to-end digital solutions to modernize your business operations and improve efficiency.',
+    },
+    {
+      icon: <CodeBracketIcon className="h-6 w-6" />,
+      title: 'Web Development',
+      description: 'Custom websites and web applications tailored to client needs, using modern technologies.',
+    },
+    {
+      icon: <ShoppingBagIcon className="h-6 w-6" />,
+      title: 'E-Commerce Solutions',
+      description: 'Building online stores, integrating payment gateways, and providing complete e-commerce platforms.',
+    },
+    {
+      icon: <PuzzlePieceIcon className="h-6 w-6" />,
+      title: 'Game Development',
+      description: 'Engaging and immersive game applications using Unity and other platforms.',
     },
     {
       icon: <CloudIcon className="h-6 w-6" />,
-      title: 'Cloud Services',
-      description: 'Scalable cloud infrastructure and deployment solutions for your applications.'
+      title: 'Cloud Solutions',
+      description: 'Scalable cloud services for storage, hosting, and data management.',
     },
     {
-      icon: <LockClosedIcon className="h-6 w-6" />,
-      title: 'Security',
-      description: 'Robust security measures and best practices to protect your digital assets.'
-    }
+      icon: <PencilIcon className="h-6 w-6" />,
+      title: 'UI/UX Design',
+      description: 'Intuitive and user-friendly design solutions to elevate user experiences.',
+    },
+    {
+      icon: <SparklesIcon className="h-6 w-6" />,
+      title: 'AI and Machine Learning',
+      description: 'Incorporating AI-driven solutions to automate processes and enhance decision-making.',
+    },
+    {
+      icon: <ChartBarIcon className="h-6 w-6" />,
+      title: 'Digital Marketing',
+      description: 'SEO, social media marketing, and advertising strategies to improve online presence.',
+    },
+    {
+      icon: <LifebuoyIcon className="h-6 w-6" />,
+      title: 'Technical Support and Maintenance',
+      description: 'Ongoing support and updates to ensure smooth functionality of digital solutions.',
+    },
   ];
+  
 
   return (
     <div id="services" className="py-24 bg-gray-50">
