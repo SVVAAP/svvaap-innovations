@@ -7,11 +7,11 @@
 </head>
 <body>
   <script>
-    // Redirect all unknown routes to index.html
-    const redirectTo = window.location.pathname;
-    const base = window.location.origin;
-    window.location.href = base + redirectTo;
-  </script>
+    var redirectTo = window.location.pathname;
+    if (redirectTo !== "/") {
+      window.location.href = "/";
+    }
+  </script>  
   <p>If you're not redirected automatically, <a id="redirect-link" href="/">click here</a>.</p>
 </body>
 </html>
