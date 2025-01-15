@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+</head>
+<body>
+  <script>
+    // Redirect all unknown routes to index.html
+    const redirectTo = window.location.pathname;
+    const base = window.location.origin;
+    window.location.href = base + "/#" + redirectTo;
+  </script>
+  <p>If you're not redirected automatically, <a id="redirect-link" href="/">click here</a>.</p>
+</body>
+</html>
