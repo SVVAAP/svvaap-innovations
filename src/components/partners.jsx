@@ -11,9 +11,9 @@ const startups = [
     description: "Immersive gaming experiences with unique concepts."
   },
   {
-    name: "UrFoodMenu",
+    name: "N9 Clothings",
     logo: n9,
-    description: "Digital menu solutions for restaurants."
+    description: "sketch design on t-shirts."
   },
   {
     name: "Bhumid Designs",

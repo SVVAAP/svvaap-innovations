@@ -66,42 +66,43 @@ export default function ProjectCarousel() {
   return (
     <div className="relative py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center text-black text-4xl font-bold mb-5 ">Projects</div>
-        <div className="relative overflow-hidden rounded-lg shadow-4xl rotate-[3deg]">
-          <div className="flex items-center h-[500px] bg-black ">
+        <div className="max-w-4xl mx-auto text-center text-black text-3xl font-bold sm:text-4xl mb-5">
+          Projects
+        </div>
+        <div className="relative overflow-hidden rounded-lg shadow-lg sm:rotate-0 rotate-[2deg]">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:h-[500px] bg-black">
             {/* Left Section */}
             <div
-              className="w-1/3 p-8 flex flex-col justify-center space-y-4 bg-gradient-to-r from-black to-transparent text-white cursor-pointer"
+              className="w-full sm:w-1/3 p-4 sm:p-8 flex flex-col justify-center space-y-4 bg-gradient-to-r from-black to-transparent text-white cursor-pointer"
               onClick={() => handleClick(projects[currentIndex].url)} // Add click event to navigate
             >
               <div className="flex items-center space-x-4">
                 <div>{projects[currentIndex].icon}</div>
                 <p className="text-sm font-medium">{projects[currentIndex].category}</p>
               </div>
-              <h3 className="text-2xl font-bold">{projects[currentIndex].title}</h3>
-              <p className="text-gray-300">{projects[currentIndex].description}</p>
+              <h3 className="text-xl sm:text-2xl font-bold">{projects[currentIndex].title}</h3>
+              <p className="text-gray-300 text-sm sm:text-base">{projects[currentIndex].description}</p>
             </div>
 
             {/* Right Section */}
-            <div className="w-2/3 relative ">
+            <div className="w-full sm:w-2/3 relative">
               <img
                 src={projects[currentIndex].image}
                 alt={projects[currentIndex].title}
                 className="w-full h-full object-cover rounded-lg shadow-lg pr-5"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-5 rounded-lg "></div>
+              <div className="absolute inset-0 bg-black bg-opacity-5 rounded-lg"></div>
             </div>
-
           </div>
 
           {/* Navigation Controls */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg sm:p-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 sm:h-8 sm:w-8"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -111,11 +112,11 @@ export default function ProjectCarousel() {
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg sm:p-4"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-6 w-6 sm:h-8 sm:w-8"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

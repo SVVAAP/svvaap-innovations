@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Format the message to be sent to WhatsApp
+    const whatsAppMessage = `*Contact Form Submission*\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+    const whatsAppNumber = '+917899535703'; // The WhatsApp number you want to send the message to
+    const whatsAppURL = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(whatsAppMessage)}`;
+
+    // Redirect to WhatsApp with the message
+    window.open(whatsAppURL, '_blank');
+  };
+
   return (
     <div id="contact" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +36,7 @@ export default function Contact() {
             <div className="mt-4 text-center">
               <h3 className="text-lg font-medium text-gray-900">Phone</h3>
               <p className="mt-2 text-base text-gray-600">Mon-Fri from 8am to 6pm</p>
-              <p className="mt-2 text-base text-indigo-600">+91 7988535703</p>
+              <p className="mt-2 text-base text-indigo-600">+91 7899535703</p>
             </div>
           </div>
 
@@ -41,42 +57,31 @@ export default function Contact() {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-medium text-gray-900">Office</h3>
-              <p className="mt-2 text-base text-gray-600">Come say hello at our office</p>
+              <p className="mt-2 text-base text-gray-600">Come say hello at our Online office</p>
               <p className="mt-2 text-base text-indigo-600">Udupi, Karnataka</p>
             </div>
           </div>
         </div>
 
         <div className="mt-20">
-          <form className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div>
-              <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                 First name
               </label>
               <div className="mt-1">
                 <input
                   type="text"
-                  name="first-name"
-                  id="first-name"
+                  name="name"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   autoComplete="given-name"
-                  className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  className="block w-full rounded-sm border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
                 />
               </div>
             </div>
-            <div>
-              <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
-                Last name
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="last-name"
-                  id="last-name"
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                />
-              </div>
-            </div>
+
             <div className="sm:col-span-2">
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email
@@ -86,11 +91,14 @@ export default function Contact() {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
+
             <div className="sm:col-span-2">
               <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                 Message
@@ -100,10 +108,13 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
+
             <div className="sm:col-span-2">
               <button
                 type="submit"
