@@ -8,10 +8,8 @@
 <body>
   <script>
     // Redirect all unknown routes to index.html
-    const redirectTo = window.location.pathname;
-    const base = window.location.origin;
-    window.location.href = base + "/#" + redirectTo;
+    const redirectTo = window.location.pathname + window.location.search;
+    window.location.replace(`/${redirectTo}`);
   </script>
-  <p>If you're not redirected automatically, <a id="redirect-link" href="/">click here</a>.</p>
 </body>
 </html>
