@@ -7,11 +7,9 @@
 </head>
 <body>
   <script>
-    var redirectTo = window.location.pathname;
-    if (redirectTo !== "/") {
-      window.location.href = "/";
-    }
-  </script>  
-  <p>If you're not redirected automatically, <a id="redirect-link" href="/">click here</a>.</p>
+    // Redirect all unknown routes to index.html
+    const redirectTo = window.location.pathname + window.location.search;
+    window.location.replace(`/${redirectTo}`);
+  </script>
 </body>
 </html>
