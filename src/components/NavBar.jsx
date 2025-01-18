@@ -16,18 +16,11 @@ const Navbar = () => {
           <img src={logo} className="h-10" alt="Svvaap Logo" />
         </Link>
 
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center"
-          >
-            Get Started
-          </button>
-
+        <div className="flex md:hidden">
           <button
             onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300"
             aria-controls="navbar-cta"
             aria-expanded={isOpen ? "true" : "false"}
           >
@@ -90,7 +83,30 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            {/* Add "Visit Ideogram" button inside the menu for mobile */}
+            <li className="md:hidden">
+              <Link to="/ideogram">
+                <button
+                  type="button"
+                  className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center"
+                >
+                  Visit Ideogram
+                </button>
+              </Link>
+            </li>
           </ul>
+        </div>
+
+        {/* Move the button outside for desktop */}
+        <div className="hidden md:block md:order-2">
+          <Link to="/ideogram">
+            <button
+              type="button"
+              className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center"
+            >
+              Visit Ideogram
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

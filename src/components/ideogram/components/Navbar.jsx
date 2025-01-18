@@ -1,40 +1,71 @@
-import React from 'react';
-
-const Navbar = ({ isDarkMode, toggleTheme, toggleSidebar, userProfile }) => {
+import React from "react";
+import Logo from "/img/ideogram_logo.png"
+const Navbar = () => {
   return (
-    <nav className="bg-gray-900 dark:bg-gray-800 text-white p-4 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Ideogram</h1>
+    <div className="fixed top-0 w-full bg-white dark:bg-black shadow-md z-50">
+      {/* Desktop Navbar */}
+      <div className="hidden md:flex justify-around items-center h-16 px-8">
+       
+          {/* Left-side navigation */}
+          <a href="/home" className="hover:text-blue-500 text-gray-500 dark:text-gray-300">
+            Home
+          </a>
+          <a href="/profile" className="hover:text-blue-500 text-gray-500 dark:text-gray-300">
+            Profile
+          </a>
+       
+{/* Logo */}
+<div className="text-center">
+  <a href="/" className="flex justify-center items-center">
+    <img src={Logo} alt="Logo" className="w-44 h-auto" />
+  </a>
+</div>
 
-        {/* Mobile Menu Toggle Button */}
-        <button className="lg:hidden" onClick={toggleSidebar}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
 
-        <ul className="hidden lg:flex space-x-6">
-          <li><a href="#" className="hover:text-blue-400">Home</a></li>
-          <li><a href="#" className="hover:text-blue-400">About</a></li>
-          <li><a href="#" className="hover:text-blue-400">Contact</a></li>
-          <li><a href="#" className="hover:text-blue-400">Profile</a></li>
-        </ul>
-
-        {/* Theme Toggle Button */}
-        <div className="hidden lg:flex items-center space-x-4">
-          <button
-            onClick={toggleTheme}
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg"
+      
+          {/* Right-side navigation */}
+          <a
+            href="/notifications"
+            className="hover:text-blue-500 text-gray-500 dark:text-gray-300"
           >
-            {isDarkMode ? 'Day Mode' : 'Night Mode'}
-          </button>
-
-          {/* User Info */}
-          <p>{userProfile.name}</p>
-          <button className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg">Logout</button>
-        </div>
+            Notifications
+          </a>
+          <a href="/categories" className="hover:text-blue-500 text-gray-500 dark:text-gray-300">
+            Categories
+          </a>
+       
       </div>
-    </nav>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden fixed bottom-0 w-full bg-white dark:bg-black shadow-lg flex justify-between items-center h-16 px-4">
+        <a href="/home" className="flex flex-col items-center text-gray-500 dark:text-gray-300">
+          <span>🏠</span>
+          <span className="text-xs">Home</span>
+        </a>
+        <a href="/search" className="flex flex-col items-center text-gray-500 dark:text-gray-300">
+          <span>🔍</span>
+          <span className="text-xs">Search</span>
+        </a>
+        <a
+          href="/post"
+          className="flex flex-col items-center text-blue-500"
+        >
+          <span>➕</span>
+          <span className="text-xs">Post</span>
+        </a>
+        <a
+          href="/notifications"
+          className="flex flex-col items-center text-gray-500 dark:text-gray-300"
+        >
+          <span>🔔</span>
+          <span className="text-xs">Notifications</span>
+        </a>
+        <a href="/profile" className="flex flex-col items-center text-gray-500 dark:text-gray-300">
+          <span>👤</span>
+          <span className="text-xs">Profile</span>
+        </a>
+      </div>
+    </div>
   );
 };
 

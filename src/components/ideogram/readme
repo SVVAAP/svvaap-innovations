@@ -1,0 +1,24 @@
+// src/
+// ├── components/
+// │   ├── Navbar.js        # Top navigation bar (similar to Twitter's)
+// │   ├── Sidebar.js       # Sidebar for navigation options
+// │   ├── Post.js          # Individual post (like a tweet)
+// │   ├── Feed.js          # Main feed displaying all posts
+// │   ├── ProfileCard.js   # User profile details (e.g., bio, followers)
+// │   └── Modal.js         # Modal for posting a new idea
+// ├── pages/
+// │   ├── Home.js          # Feed page
+// │   ├── Profile.js       # User profile page
+// │   ├── Explore.js       # Explore page for new ideas
+// │   └── Notifications.js # Notifications page
+// ├── firebase/
+// │   └── firebaseConfig.js
+// ├── utils/
+// │   └── api.js           # API integrations with PHP backend
+// ├── App.js
+// ├── index.js
+// └── styles/
+//     ├── global.css       # Overall styling
+//     └── components.css   # Component-specific styles
+
+// Client secrets github// f045da2179f7e29f5d4c3d6687011ca2398980ee

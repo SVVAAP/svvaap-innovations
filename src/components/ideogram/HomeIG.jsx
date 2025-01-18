@@ -67,7 +67,7 @@ const Home = () => {
           handleSendMessage={handleSendMessage}
           likeIdea={likeIdea}
         />
-        <RightSidebar likedIdeas={likedIdeas} userProfile={userProfile} />
+       
       </div>
     </div>
   );

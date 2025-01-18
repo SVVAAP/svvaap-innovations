@@ -69,7 +69,7 @@ export default function ProjectCarousel() {
         <div className="max-w-4xl mx-auto text-center text-black text-3xl font-bold sm:text-4xl mb-5">
           Projects
         </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg sm:rotate-0 rotate-[2deg]">
+        <div className="relative overflow-hidden rounded-lg shadow-lg">
           <div className="flex flex-col sm:flex-row sm:items-center sm:h-[500px] bg-black">
             {/* Left Section */}
             <div
