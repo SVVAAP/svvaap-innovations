@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../img/logo_light.png";
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-black text-gray-300 py-10">
@@ -50,7 +51,9 @@ const Footer = () => {
               <a href="#about">About Us</a>
             </li>
             <li className="mb-2 hover:text-white">
-              <a href="#about">Our Team</a>
+              
+            <Link to="/Team">Team Members</Link> 
+
             </li>
             <li className="mb-2 hover:text-white">
               <a href="#Careers">Careers</a>

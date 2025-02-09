@@ -3,7 +3,8 @@ import LogoCarousel from './LogoCarousel';
 import sen10games from "../img/sen10games.png"
 import n9 from "../img/n9clothing.png"
 import bhumijcreations from "../img/bhumij creations logo.png"
-
+import menucraft from "../img/menucraft_logo.png"
+import ideogram from "../img/ideogram-white.png"
 const startups = [
   {
     name: "Sen10 Games",
@@ -16,8 +17,18 @@ const startups = [
     description: "sketch design on t-shirts."
   },
   {
-    name: "Bhumid Designs",
+    name: "Bhumij Designs",
     logo: bhumijcreations,
+    description: "Creative design and branding for businesses."
+  },
+  {
+    name: "MenuCraft",
+    logo: menucraft,
+    description: "Creative design and branding for businesses."
+  },
+  {
+    name: "ideoGram",
+    logo: ideogram,
     description: "Creative design and branding for businesses."
   }
  

@@ -9,6 +9,7 @@ import Projects from '../components/projects';
 import UpcomingProjects from '../components/upcomingProjects';
 import Partners from '../components/partners';
 import Contact from '../components/Contact';
+import TeamMembers from '../components/TeamMembers';
 
 
 function Home(props) {
@@ -19,12 +20,13 @@ function Home(props) {
       <Navbar />
       <main>
         <Hero />
-        <Services/>
+        <Services />
         <Projects />
         <UpcomingProjects />
         <Partners />
         <Contact />
-        <Footer/>
+        <TeamMembers />
+        <Footer />
       </main>
     </div>
   );
