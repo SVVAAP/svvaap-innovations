@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Navbar from './components/NavBar';
 import './App.css';
 import About from './components/About.jsx';
+import Careers from './components/Careers.jsx';
+import Startup from './components/startup.jsx';
 import Services from './components/Services.jsx';
 import Contact from './components/Contact';
 import TeamMembers from './components/TeamMembers';
@@ -12,6 +14,7 @@ import NoPage from "./pages/NoPage.jsx";
 import Ideogram from './components/ideogram/HomeIG.jsx';
 import IGLogin from './components/ideogram/components/Login.jsx';
 import Loader from './components/Loader';
+import Projects from './components/Clientsprojects.jsx';
 import "./index.css";
 
 
@@ -37,7 +40,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/TeamMembers" element={<TeamMembers />} />
+        <Route path="/Team" element={<TeamMembers />} />
+        <Route path="/Careers" element={<Careers />} />
+        <Route path="/startup" element={<Startup />} />
+        <Route path="/projects" element={<Projects />} />
         {/* ideogram links  */}
         <Route path="/ideogram" element={<Ideogram />} />
         <Route path="/ideogram/login" element={<IGLogin />} />

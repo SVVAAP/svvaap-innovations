@@ -3,7 +3,7 @@ import logo from "../img/logo_light.png";
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 py-10">
+    <footer className="bg-black text-gray-300 py-10 p-5">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Company Info */}
         <div className="col-span-2">
@@ -48,7 +48,7 @@ const Footer = () => {
           <h4 className="text-lg font-semibold mb-4">Who we are</h4>
           <ul>
             <li className="mb-2 hover:text-white">
-              <a href="#about">About Us</a>
+               <Link to="/about">About Us</Link>
             </li>
             <li className="mb-2 hover:text-white">
               
@@ -56,10 +56,10 @@ const Footer = () => {
 
             </li>
             <li className="mb-2 hover:text-white">
-              <a href="#Careers">Careers</a>
+              <a href="/Careers">Careers</a>
             </li>
             <li className="hover:text-white">
-              <a href="#Blog">Blog</a>
+              <a href="/startup">Startups</a>
             </li>
           </ul>
         </div>

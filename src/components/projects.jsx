@@ -1,131 +1,182 @@
-import React, { useState, useEffect } from 'react';
-import { GlobeAltIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
-import Jnanashikshakendra from "../img/jnanashikshakendra_screenshot.png";
-import Jobhunt4u from "../img/jobhunt4u_screenshot.png";
-import A2Zpremiumdeals from "../img/a2zpremiumdeals_screenshot.png";
-import Sen10games from "../img/sen10games_screenshot.png";
+import React from 'react';
+import { ExternalLink, ArrowRight, Code, Database, Cloud, Shield, Cpu, Zap ,PenTool, ImagePlus, Utensils } from 'lucide-react';
+
+
+const InnovationProjects = () => {
+ 
 
 const projects = [
   {
-    title: "Jnanashikshakendra.com",
-    description: "An educational platform offering a wide range of learning resources.",
-    image: Jnanashikshakendra,
-    url: "https://jnanashikshakendra.com",
-    category: "Web Development",
-    icon: <GlobeAltIcon className="h-10 w-10 text-indigo-500" />
-  },
+  id: 1,
+  title: "Createx",
+  description:
+    "Createx is an AI-powered platform that transforms ideas into production-ready web applications. Built on top of DeepSeek, OpenAI, and Gemini, it generates full-stack code from natural language — from UI components to backend logic and deployment.",
+  link: "https://createx.svvaap.in",
+  image: "./img/createx-screenshot.png",
+  icon: <PenTool className="w-6 h-6" />,
+  tech: ["React", "Gemini API", "OpenAI", "DeepSeek", "Supabase", "Tailwind CSS"]
+},
+
+ {
+  id: 2,
+  title: "Ideogram",
+  description:
+    "Ideogram is a community-powered idea-sharing platform where innovators can post, explore, and collaborate on ideas across categories like business, technology, social impact, and startups. It's built to spark the next big thing — one idea at a time.",
+  link: "https://ideogram.svvaap.in",
+  image: "./img/ideogram-screenshot.png",
+  icon: <ImagePlus className="w-6 h-6" />,
+  tech: ["Next.js", "Supabase", "Tailwind CSS"]
+},
+
   {
-    title: "Jobhunt4u.in",
-    description: "A job portal connecting job seekers with potential employers.",
-    image: Jobhunt4u,
-    url: "https://jobhunt4u.in",
-    category: "Web & Mobile",
-    icon: <GlobeAltIcon className="h-10 w-10 text-indigo-500" />
-  },
-  {
-    title: "A2Zpremiumdeals.com",
-    description: "An e-commerce platform offering premium deals across various categories.",
-    image: A2Zpremiumdeals,
-    url: "https://a2zpremiumdeals.com",
-    category: "E-commerce",
-    icon: <GlobeAltIcon className="h-10 w-10 text-indigo-500" />
-  },
-  {
-    title: "Sen10games.in",
-    description: "A visionary game development company creating futuristic, sci-fi gaming experiences.",
-    image: Sen10games,
-    url: "https://sen10games.in",
-    category: "Game Development",
-    icon: <DevicePhoneMobileIcon className="h-10 w-10 text-indigo-500" />
-  }
+  id: 3,
+  title: "MenuCraft.in",
+  description:
+    "MenuCraft.in is a smart digital menu and POS software built for modern restaurants and cafes. It offers interactive QR-based menus, real-time menu updates, and a full-featured POS system for order management, billing, and inventory — all in one seamless platform.",
+  link: "https://menucraft.in",
+  image: "https://cms.menutiger.com/wp-content/uploads/2022/11/ver-2-The-best-QR-code-contactless-digital-menu-in-2022-copy-1536x702.jpg?w=600&h=400&fit=crop",
+  icon: <Utensils className="w-6 h-6" />,
+  tech: ["React", "Supabase", "QR API", "MongoDB", "Tailwind CSS"]
+}
+
 ];
 
-export default function ProjectCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }, 5000); // Change slide every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-  };
-
-  const handleClick = (url) => {
-    window.location.href = url; // Redirect to the project's URL
-  };
 
   return (
-    <div className="relative py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center text-black text-3xl font-bold sm:text-4xl mb-5">
-          Projects
+    <div className="min-h-screen bg-gray-50">
+      {/* Header Section */}
+      <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Innovation <span className="text-blue-400">Portfolio</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            Cutting-edge software solutions transforming enterprise technology landscapes
+          </p>
+          <div className="mt-8 flex justify-center space-x-4 text-sm text-gray-400">
+            <span className="px-3 py-1 bg-blue-900/50 rounded-full">Enterprise Solutions</span>
+            <span className="px-3 py-1 bg-blue-900/50 rounded-full">Cloud Native</span>
+            <span className="px-3 py-1 bg-blue-900/50 rounded-full">AI/ML Powered</span>
+          </div>
         </div>
-        <div className="relative overflow-hidden rounded-lg shadow-lg">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:h-[500px] bg-black">
-            {/* Left Section */}
-            <div
-              className="w-full sm:w-1/3 p-4 sm:p-8 flex flex-col justify-center space-y-4 bg-gradient-to-r from-black to-transparent text-white cursor-pointer"
-              onClick={() => handleClick(projects[currentIndex].url)} // Add click event to navigate
-            >
-              <div className="flex items-center space-x-4">
-                <div>{projects[currentIndex].icon}</div>
-                <p className="text-sm font-medium">{projects[currentIndex].category}</p>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold">{projects[currentIndex].title}</h3>
-              <p className="text-gray-300 text-sm sm:text-base">{projects[currentIndex].description}</p>
-            </div>
+      </div>
 
-            {/* Right Section */}
-            <div className="w-full sm:w-2/3 relative">
-              <img
-                src={projects[currentIndex].image}
-                alt={projects[currentIndex].title}
-                className="w-full h-full object-cover rounded-lg shadow-lg pr-5"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-5 rounded-lg"></div>
+      {/* Projects Section */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="space-y-20">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`flex flex-col lg:flex-row items-center gap-12 ${
+                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+              }`}
+            >
+              {/* Content Side */}
+              <div className="flex-1">
+                <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
+                  {/* Project Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="bg-blue-100 p-3 rounded-lg text-blue-600">
+                      {project.icon}
+                    </div>
+                    <div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                        {project.title}
+                      </h2>
+                      <div className="text-sm text-gray-500 font-medium">
+                        Project #{project.id.toString().padStart(2, '0')}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                  
+                  {/* Tech Stack */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Tech Stack:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 group"
+                  >
+                    View Project
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Image Side */}
+              <div className="flex-1">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="relative w-full h-80 lg:h-96 object-cover rounded-xl shadow-xl transform group-hover:scale-105 transition-all duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-xl"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-white">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold mb-4">Impact & Innovation</h3>
+            <p className="text-xl opacity-90">
+              Delivering enterprise solutions that drive digital transformation
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">500+</div>
+              <div className="text-blue-100">Enterprise Clients</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">99.9%</div>
+              <div className="text-blue-100">Uptime SLA</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">50M+</div>
+              <div className="text-blue-100">API Calls/Day</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-blue-100">Support Coverage</div>
             </div>
           </div>
-
-          {/* Navigation Controls */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg sm:p-4"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 sm:h-8 sm:w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg sm:p-4"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 sm:h-8 sm:w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          
+          <div className="text-center mt-12">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-50 transition-colors duration-300 transform hover:scale-105">
+              Schedule Demo
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default InnovationProjects;

@@ -18,32 +18,47 @@ const teamMembers = [
 const people = [
   {
     name: 'Srujan Moolya',
-    role: 'Founder / CEO',
+    role: 'Founder | CEO | Full-Stack Developer',
     imageUrl:
-      'https://media.licdn.com/dms/image/v2/D5603AQEbOr3huxeb2w/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695266645091?e=1744243200&v=beta&t=5yf6GBMar_in2B9z0zg1m2mlQDRBYIwzWrgp2urTZ7Q',
+      './img/srujan.png',
       linkedinUrl:"https://www.linkedin.com/in/srujan-moolya",
   },
   {
     name: 'Anup Nayak',
-    role: 'Co-Founder / Full-Stack Developer',
+    role: 'Co-Founder | Full-Stack Developer',
     imageUrl:
-      'https://i.pinimg.com/736x/b1/33/4f/b1334f43d458b7a3794cd239928370c7.jpg',
+      './img/anup.png',
       linkedinUrl:"https://www.linkedin.com/in/anup-nayak",
   },
   {
     name: 'Viyan',
     role: 'Ui/Ux designer',
     imageUrl:
-      'https://cdn.vectorstock.com/i/500p/63/28/funny-astronaut-works-on-notebook-vector-45226328.jpg',
+      './img/viyan.png',
       linkedinUrl:"https://www.linkedin.com/in/viyan-castelino",
     },
   {
     name: 'Sainik',
     role: 'Graphic Designer',
     imageUrl:
-      'https://i.etsystatic.com/40533556/r/il/15ab7e/4873057259/il_300x300.4873057259_lkai.jpg',
+      './img/sainik.png',
       linkedinUrl:"https://www.linkedin.com/in/sainik-bhumij",
-    }
+    },
+    {
+    name: 'preetham Acharya',
+    role: 'Graphic Designer | 3D Artist',
+    imageUrl:
+      './img/preetham.png',
+      linkedinUrl:"https://www.linkedin.com/in/preetham-acharya-815616256/",
+    },
+    {
+    name: 'Alister dsouza',
+    role: 'Graphic Designer | 3D Artist',
+    imageUrl:
+      './img/alister.png',
+      linkedinUrl:"https://www.linkedin.com/in/preetham-acharya-815616256/",
+    },
+
 
 ];
 

@@ -13,7 +13,7 @@ export default function LogoCarousel({ logos }) {
     scrollElement.innerHTML += clonedLogos;
 
     // Calculate scroll speed based on content width
-    const duration = scrollElement.scrollWidth * 20;
+    const duration = scrollElement.scrollWidth * 5;
 
     scrollElement.style.animation = `scroll ${duration}ms linear infinite`;
   }, []);

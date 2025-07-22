@@ -69,10 +69,18 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/services"
+                to="/startup"
                 className="block py-2 px-3 md:p-0 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-600"
               >
-                Services
+                StartUps
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/projects"
+                className="block py-2 px-3 md:p-0 text-gray-700 rounded hover:bg-gray-100 hover:text-blue-600"
+              >
+                Projects
               </Link>
             </li>
             <li>
@@ -85,7 +93,7 @@ const Navbar = () => {
             </li>
             {/* Add "Visit Ideogram" button inside the menu for mobile */}
             <li className="md:hidden">
-              <Link to="/ideogram">
+              <Link to="https://ideogram.svvaap.in">
                 <button
                   type="button"
                   className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center"
@@ -99,7 +107,7 @@ const Navbar = () => {
 
         {/* Move the button outside for desktop */}
         <div className="hidden md:block md:order-2">
-          <Link to="/ideogram">
+          <Link to="https://ideogram.svvaap.in">
             <button
               type="button"
               className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2 text-center"
