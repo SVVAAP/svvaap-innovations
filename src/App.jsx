@@ -11,6 +11,9 @@ import Contact from './components/Contact';
 import TeamMembers from './components/TeamMembers';
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage.jsx";
+import TermsAndConditions from "./pages/TermsAndConditions.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+import RefundPolicy from "./pages/RefundPolicy.jsx";
 import Ideogram from './components/ideogram/HomeIG.jsx';
 import IGLogin from './components/ideogram/components/Login.jsx';
 import Loader from './components/Loader';
@@ -44,6 +47,10 @@ function App() {
         <Route path="/Careers" element={<Careers />} />
         <Route path="/startup" element={<Startup />} />
         <Route path="/projects" element={<Projects />} />
+        {/* Legal Pages */}
+        <Route path="/terms" element={<TermsAndConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/refund" element={<RefundPolicy />} />
         {/* ideogram links  */}
         <Route path="/ideogram" element={<Ideogram />} />
         <Route path="/ideogram/login" element={<IGLogin />} />

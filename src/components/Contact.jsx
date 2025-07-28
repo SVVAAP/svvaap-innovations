@@ -74,8 +74,8 @@ export default function Contact() {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-lg font-medium text-gray-900">Office</h3>
-              <p className="mt-2 text-base text-gray-600">Come say hello at our online office</p>
-              <p className="mt-2 text-base text-indigo-600">Udupi, Karnataka</p>
+              <p className="mt-2 text-base text-gray-600">Come say hello at our office</p>
+              <p className="mt-2 text-base text-indigo-600">Udupi, Karnataka - 576101</p>
             </div>
           </div>
         </div>

@@ -14,6 +14,9 @@ const Footer = () => {
           </p>
           <div className="mt-4">
             <p className="flex items-center mb-2">
+              📍 Udupi, Karnataka - 576101
+            </p>
+            <p className="flex items-center mb-2">
               📞
               <a
                 href="https://wa.me/917899535703"
@@ -24,7 +27,6 @@ const Footer = () => {
                 +91 7899535703 (WhatsApp Messages)
               </a>
             </p>
-
             <p className="flex items-center">
               <a
                 href="mailto:workwithsvvaap@gmail.com"
@@ -33,7 +35,6 @@ const Footer = () => {
                 📧 workwithsvvaap@gmail.com
               </a>
             </p>
-
           </div>
           <div className="flex space-x-4 mt-4">
             <a href="https://www.linkedin.com/in/srujan-moolya" className="text-gray-400 hover:text-white">LinkedIn</a>
@@ -89,13 +90,16 @@ const Footer = () => {
               <a href="#contact">Contact Us</a>
             </li>
             <li className="mb-2 hover:text-white">
-              <a href="#">Support</a>
+              <a href="#contact">Support</a>
             </li>
             <li className="mb-2 hover:text-white">
-              <a href="#">Terms of Service</a>
+              <Link to="/terms">Terms & Conditions</Link>
+            </li>
+            <li className="mb-2 hover:text-white">
+              <Link to="/privacy">Privacy Policy</Link>
             </li>
             <li className="hover:text-white">
-              <a href="#">Privacy Policy</a>
+              <Link to="/refund">Refund Policy</Link>
             </li>
           </ul>
         </div>
