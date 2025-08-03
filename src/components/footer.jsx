@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex space-x-4 mt-4">
-            <a href="https://www.linkedin.com/in/srujan-moolya" className="text-gray-400 hover:text-white">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/svvaap-innovations/" className="text-gray-400 hover:text-white">LinkedIn</a>
             <a href="https://x.com/SVVAAPofficial" className="text-gray-400 hover:text-white">Twitter</a>
             <a href="https://www.instagram.com/svvaap" className="text-gray-400 hover:text-white">Instagram</a>
             <a href="https://youtube.com/@svvaap-innovations" className="text-gray-400 hover:text-white">Youtube</a>
