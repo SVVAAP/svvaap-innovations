@@ -11,7 +11,7 @@ import UpcomingProjects from '../components/upcomingProjects';
 import Partners from '../components/partners';
 import Contact from '../components/Contact';
 import TeamMembers from '../components/TeamMembers';
-import InnovationProjects from '../components/Projects';
+import InnovationProjects from '../components/projects';
 import Engineers from '../components/21xengineers';
 import CompanyStructure from '../components/CompanyStructure';
 
