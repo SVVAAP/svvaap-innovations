@@ -14,11 +14,13 @@ import NoPage from "./pages/NoPage.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
+import PaymentDemo from "./pages/PaymentDemo.jsx";
 import Ideogram from './components/ideogram/HomeIG.jsx';
 import IGLogin from './components/ideogram/components/Login.jsx';
 import Loader from './components/Loader';
 import Projects from './components/Clientsprojects.jsx';
 import "./index.css";
+import ContactBar from './components/ContactBar.jsx';
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
 
   return (
     <Router>
+      <ContactBar phone="7899535703" whatsappNumber="7899535703" />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/Home" element={<Home />} />
@@ -47,6 +50,8 @@ function App() {
         <Route path="/Careers" element={<Careers />} />
         <Route path="/startup" element={<Startup />} />
         <Route path="/projects" element={<Projects />} />
+        {/* Payment Demo */}
+        <Route path="/payment-demo" element={<PaymentDemo />} />
         {/* Legal Pages */}
         <Route path="/terms" element={<TermsAndConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />

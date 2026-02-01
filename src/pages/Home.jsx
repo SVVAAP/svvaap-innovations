@@ -13,6 +13,7 @@ import Contact from '../components/Contact';
 import TeamMembers from '../components/TeamMembers';
 import MyProjects from '../componentS/Projects';
 import Engineers from '../components/21xengineers';
+import CompanyStructure from '../components/CompanyStructure';
 
 
 function Home(props) {
@@ -24,7 +25,7 @@ function Home(props) {
       <main>
         <Hero />
         {/* <HeroSection /> */}
-
+        <CompanyStructure />
         <Services />
         <MyProjects/>
         <Projects />

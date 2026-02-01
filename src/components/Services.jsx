@@ -20,11 +20,11 @@ export default function Services() {
       title: 'Mobile Development',
       description: 'Native and cross-platform mobile applications that provide seamless user experiences.',
     },
-    {
-      icon: <GlobeAltIcon className="h-6 w-6" />,
-      title: 'Digital Transformation',
-      description: 'End-to-end digital solutions to modernize your business operations and improve efficiency.',
-    },
+    // {
+    //   icon: <GlobeAltIcon className="h-6 w-6" />,
+    //   title: 'Digital Transformation',
+    //   description: 'End-to-end digital solutions to modernize your business operations and improve efficiency.',
+    // },
     {
       icon: <CodeBracketIcon className="h-6 w-6" />,
       title: 'Web Development',
@@ -40,11 +40,11 @@ export default function Services() {
       title: 'Game Development',
       description: 'Engaging and immersive game applications using Unity and other platforms.',
     },
-    {
-      icon: <CloudIcon className="h-6 w-6" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud services for storage, hosting, and data management.',
-    },
+    // {
+    //   icon: <CloudIcon className="h-6 w-6" />,
+    //   title: 'Cloud Solutions',
+    //   description: 'Scalable cloud services for storage, hosting, and data management.',
+    // },
     {
       icon: <PencilIcon className="h-6 w-6" />,
       title: 'UI/UX Design',
@@ -55,16 +55,16 @@ export default function Services() {
       title: 'AI and Machine Learning',
       description: 'Incorporating AI-driven solutions to automate processes and enhance decision-making.',
     },
-    {
-      icon: <ChartBarIcon className="h-6 w-6" />,
-      title: 'Digital Marketing',
-      description: 'SEO, social media marketing, and advertising strategies to improve online presence.',
-    },
-    {
-      icon: <LifebuoyIcon className="h-6 w-6" />,
-      title: 'Technical Support and Maintenance',
-      description: 'Ongoing support and updates to ensure smooth functionality of digital solutions.',
-    },
+    // {
+    //   icon: <ChartBarIcon className="h-6 w-6" />,
+    //   title: 'Digital Marketing',
+    //   description: 'SEO, social media marketing, and advertising strategies to improve online presence.',
+    // },
+    // {
+    //   icon: <LifebuoyIcon className="h-6 w-6" />,
+    //   title: 'Technical Support and Maintenance',
+    //   description: 'Ongoing support and updates to ensure smooth functionality of digital solutions.',
+    // },
   ];
   
 
