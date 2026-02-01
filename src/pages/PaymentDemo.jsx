@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const PaymentDemo = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedWeight, setSelectedWeight] = useState('250g');
+  const [selectedImage, setSelectedImage] = useState(0);
 
   // Product details
   const product = {
