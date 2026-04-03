@@ -11,9 +11,9 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { label: 'Services', href: '/#services' },
-    { label: 'Industries', href: '/#industries' },
-    { label: 'Why Svvaap', href: '/#why-svvaap' },
+    { label: 'Services', href: '#services' },
+    { label: 'Industries', href: '#industries' },
+    { label: 'Why Svvaap', href: '#why-svvaap' },
     { label: 'About', href: '/about' },
     { label: 'Careers', href: '/Careers' },
     { label: 'Contact', href: '/contact' },
@@ -24,9 +24,9 @@ const Navbar = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-3" aria-label="Svvaap Innovations Home">
           <img src={logo} className="h-9 w-auto" alt="Svvaap Logo" />
-          <span className="hidden text-sm font-semibold tracking-[0.2em] text-[#0b1220] sm:inline">
+          {/* <span className="hidden text-sm font-semibold tracking-[0.2em] text-[#0b1220] sm:inline">
             SVVAAP INNOVATIONS
-          </span>
+          </span> */}
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
@@ -43,7 +43,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href="/#contact"
+            href="/contact"
             className="inline-flex items-center rounded-full bg-[#0f6d5e] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0a594d]"
           >
             Book Strategy Call
