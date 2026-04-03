@@ -6,29 +6,7 @@ const InnovationProjects = () => {
  
 
 const projects = [
-  {
-  id: 1,
-  title: "Createx",
-  description:
-    "Createx is an AI-powered platform that transforms ideas into production-ready web applications. Built on top of DeepSeek, OpenAI, and Gemini, it generates full-stack code from natural language — from UI components to backend logic and deployment.",
-  link: "https://createx.svvaap.in",
-  image: "./img/createx-screenshot.png",
-  icon: <PenTool className="w-6 h-6" />,
-  tech: ["React", "Gemini API", "OpenAI", "DeepSeek", "Supabase", "Tailwind CSS"]
-},
-
- {
-  id: 2,
-  title: "Ideogram",
-  description:
-    "Ideogram is a community-powered idea-sharing platform where innovators can post, explore, and collaborate on ideas across categories like business, technology, social impact, and startups. It's built to spark the next big thing — one idea at a time.",
-  link: "https://ideogram.svvaap.in",
-  image: "./img/ideogram-screenshot.png",
-  icon: <ImagePlus className="w-6 h-6" />,
-  tech: ["Next.js", "Supabase", "Tailwind CSS"]
-},
-
-  {
+    {
   id: 3,
   title: "MenuCraft.in",
   description:
@@ -37,7 +15,20 @@ const projects = [
   image: "https://cms.menutiger.com/wp-content/uploads/2022/11/ver-2-The-best-QR-code-contactless-digital-menu-in-2022-copy-1536x702.jpg?w=600&h=400&fit=crop",
   icon: <Utensils className="w-6 h-6" />,
   tech: ["React", "Supabase", "QR API", "MongoDB", "Tailwind CSS"]
-}
+},
+//   {
+//   id: 1,
+//   title: "Createx",
+//   description:
+//     "Createx is an AI-powered platform that transforms ideas into production-ready web applications. Built on top of DeepSeek, OpenAI, and Gemini, it generates full-stack code from natural language — from UI components to backend logic and deployment.",
+//   link: "https://createx.svvaap.in",
+//   image: "./img/createx-screenshot.png",
+//   icon: <PenTool className="w-6 h-6" />,
+//   tech: ["React", "Gemini API", "OpenAI", "DeepSeek", "Supabase", "Tailwind CSS"]
+// }
+
+ 
+
 
 ];
 

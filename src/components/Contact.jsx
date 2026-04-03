@@ -25,128 +25,123 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact Us</h2>
-          <p className="mt-4 text-lg leading-6 text-gray-600">
-            Get in touch with us to discuss your next project
+    <div id="contact" className="bg-[#f7f6f1] px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0f6d5e]">Let's Talk</p>
+          <h2 className="mt-3 text-3xl font-semibold text-[#0a1324] sm:text-4xl">Ready to start your next project?</h2>
+          <p className="mt-4 text-[#4f5c71]">
+            Connect with our team to discuss ideas, timelines, and how we can partner for success.
           </p>
         </div>
 
-        {/* Contact Details */}
-        <div className="mt-20 grid grid-cols-1 gap-y-16 lg:grid-cols-3 lg:gap-x-8">
+        {/* Contact Cards */}
+        <div className="mb-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {/* Phone */}
-          <div className="flex flex-col items-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-md bg-green-500">
-              <PhoneIcon className="h-6 w-6 text-white" />
+          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
+            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
+              <PhoneIcon className="h-6 w-6" />
             </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-              <p className="mt-2 text-base text-gray-600">Mon-Fri from 8am to 6pm</p>
-              <a
-                href={`https://wa.me/${whatsAppNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 text-base text-green-600 font-medium hover:underline"
-              >
-                +91 7899535703 (WhatsApp)
-              </a>
-            </div>
+            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Phone</h3>
+            <p className="mt-2 text-xs text-[#7a8a9f]">Available Mon–Fri, 9am–6pm IST</p>
+            <a
+              href={`https://wa.me/${whatsAppNumber}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex items-center text-sm font-semibold text-[#0f6d5e] hover:text-[#0a4a3f]"
+            >
+              +91 7899535703 →
+            </a>
           </div>
 
           {/* Email */}
-          <div className="flex flex-col items-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-md bg-indigo-600">
-              <EnvelopeIcon className="h-6 w-6 text-white" />
+          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
+            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
+              <EnvelopeIcon className="h-6 w-6" />
             </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-lg font-medium text-gray-900">Email</h3>
-              <p className="mt-2 text-base text-gray-600">We'll respond within 24 hours</p>
-              <p className="mt-2 text-base text-indigo-600">workwithsvvaap@gmail.com</p>
-            </div>
+            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Email</h3>
+            <p className="mt-2 text-xs text-[#7a8a9f]">We respond within 24 hours</p>
+            <a
+              href="mailto:workwithsvvaap@gmail.com"
+              className="mt-3 inline-flex items-center text-sm font-semibold text-[#0f6d5e] hover:text-[#0a4a3f]"
+            >
+              workwithsvvaap@gmail.com →
+            </a>
           </div>
 
           {/* Office */}
-          <div className="flex flex-col items-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-md bg-indigo-600">
-              <MapPinIcon className="h-6 w-6 text-white" />
+          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
+            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
+              <MapPinIcon className="h-6 w-6" />
             </div>
-            <div className="mt-4 text-center">
-              <h3 className="text-lg font-medium text-gray-900">Office</h3>
-              <p className="mt-2 text-base text-gray-600">Come say hello at our office</p>
-              <p className="mt-2 text-base text-indigo-600">Udupi, Karnataka - 576101</p>
-            </div>
+            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Office</h3>
+            <p className="mt-2 text-xs text-[#7a8a9f]">Visit us in the temple city</p>
+            <p className="mt-3 text-sm font-semibold text-[#0f1a2f]">
+              Udupi, Karnataka<br />India - 576101
+            </p>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="mt-20">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+        <div className="mx-auto max-w-2xl rounded-3xl border border-[#d0d1ca] bg-white p-8 shadow-lg sm:p-12">
+          <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                First name
+              <label htmlFor="name" className="block text-sm font-semibold text-[#0f1a2f]">
+                Your Name
               </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  autoComplete="given-name"
-                  className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                autoComplete="given-name"
+                placeholder="Firstname"
+                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
+                required
+              />
             </div>
 
             {/* Email */}
-            <div className="sm:col-span-2">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-[#0f1a2f]">
+                Email Address
               </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  autoComplete="email"
-                  className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  required
-                />
-              </div>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
+                placeholder="you@example.com"
+                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
+                required
+              />
             </div>
 
             {/* Message */}
-            <div className="sm:col-span-2">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                Message
+            <div>
+              <label htmlFor="message" className="block text-sm font-semibold text-[#0f1a2f]">
+                Your Message
               </label>
-              <div className="mt-1">
-                <textarea
-                  id="message"
-                  rows={4}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type your message here..."
-                  className="block w-full rounded-md border-gray-300 bg-white text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  required
-                />
-
-              </div>
+              <textarea
+                id="message"
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Tell us about your project..."
+                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
+                required
+              />
             </div>
 
             {/* Submit Button */}
-            <div className="sm:col-span-2">
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-green-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-              >
-                Send Message to WhatsApp
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-[#0f6d5e] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:bg-[#0a4a3f]"
+            >
+              Send Message via WhatsApp
+            </button>
           </form>
         </div>
       </div>

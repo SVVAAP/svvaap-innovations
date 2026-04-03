@@ -61,7 +61,7 @@ const PaymentDemo = () => {
       currency: 'INR',
       name: 'Svvaap Spices',
       description: `${product.name} - ${selectedWeight}`,
-      image: 'https://images.unsplash.com/photo-1596040033229-a0b44b6d1041?w=200&q=80',
+      image: product.images[0],
       handler: function (response) {
         alert(`Payment Successful! Payment ID: ${response.razorpay_payment_id}`);
         console.log('Payment Response:', response);
@@ -122,7 +122,7 @@ const PaymentDemo = () => {
             <div className="space-y-4">
               <div className="relative rounded-xl overflow-hidden bg-gray-100 aspect-square">
                 <img
-                  src={product.image}
+                  src={product.images[selectedImage]}
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
@@ -140,9 +140,15 @@ const PaymentDemo = () => {
               
               {/* Thumbnail images */}
               <div className="grid grid-cols-4 gap-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 border-transparent hover:border-orange-500 cursor-pointer transition-all">
-                    <img src={product.image} alt={`View ${i}`} className="w-full h-full object-cover" />
+                {product.images.map((img, index) => (
+                  <div 
+                    key={index} 
+                    onClick={() => setSelectedImage(index)}
+                    className={`aspect-square rounded-lg overflow-hidden bg-gray-100 border-2 cursor-pointer transition-all ${
+                      selectedImage === index ? 'border-orange-500' : 'border-transparent hover:border-orange-300'
+                    }`}
+                  >
+                    <img src={img} alt={`View ${index + 1}`} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>

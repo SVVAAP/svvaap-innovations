@@ -69,34 +69,29 @@ export default function Services() {
   
 
   return (
-    <div id="services" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Services</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Comprehensive software solutions to help your business grow and succeed
+    <div id="services" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0f6d5e]">Core Services</p>
+          <h2 className="mt-4 text-3xl font-semibold text-[#0a1324] sm:text-4xl">Deep expertise across modern technology stacks.</h2>
+          <p className="mt-4 text-[#4b5567]">
+            From initial concept through post-launch optimization, we deliver comprehensive digital capabilities with proven execution.
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 rounded-lg shadow-sm hover:shadow-lg transition-all duration-200"
+              className="group rounded-2xl border border-[#e5e7eb] bg-gradient-to-br from-[#fcfdff] to-[#f8f9fb] p-8 shadow-[0_12px_24px_rgba(10,19,36,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(10,19,36,0.12)] hover:border-[#0f6d5e]/20"
             >
-              <div>
-                <span className="rounded-lg inline-flex p-3 bg-indigo-50 text-indigo-600 ring-4 ring-white">
-                  {service.icon}
-                </span>
+              <div className="inline-flex rounded-xl bg-[#eef8f6] p-3.5 text-[#0f6d5e] group-hover:bg-[#0f6d5e] group-hover:text-white transition-colors duration-300">
+                {service.icon}
               </div>
-              <div className="mt-8">
-                <h3 className="text-lg font-medium">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500">
-                  {service.description}
-                </p>
+              <h3 className="mt-6 text-lg font-semibold text-[#0f1a2f]">{service.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#4f5c71]">{service.description}</p>
+              <div className="mt-5 flex items-center text-sm font-medium text-[#0f6d5e] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Learn more →
               </div>
             </div>
           ))}

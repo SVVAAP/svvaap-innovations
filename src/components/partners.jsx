@@ -36,18 +36,19 @@ const startups = [
 
 export default function Startups() {
   return (
-    <div id="startups" className="bg-black py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div id="startups" className="bg-[#0a1220] px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Our Startups
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#8ad3c4]">Portfolio</p>
+          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+            Ventures and startups we've incubated
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
-            Driving innovation and creativity through our ventures
+          <p className="mt-4 max-w-2xl mx-auto text-[#a9bfd6]">
+            Building innovative products and business models through our startup ecosystem.
           </p>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-14">
           <LogoCarousel logos={startups} darkTheme />
         </div>
       </div>
