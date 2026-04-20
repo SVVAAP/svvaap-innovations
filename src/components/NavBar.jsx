@@ -14,6 +14,7 @@ const Navbar = () => {
     { label: 'Services', href: '#services' },
     { label: 'Industries', href: '#industries' },
     { label: 'Why Svvaap', href: '#why-svvaap' },
+    { label: '21xEngineers', href: '/21xengineers' },
     { label: 'About', href: '/about' },
     { label: 'Careers', href: '/Careers' },
     { label: 'Contact', href: '/contact' },

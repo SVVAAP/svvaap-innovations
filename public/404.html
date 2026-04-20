@@ -8,7 +8,7 @@
 <body>
   <script>
     // Redirect all unknown routes to index.html
-    const redirectTo = window.location.pathname + window.location.search;
+    const redirectTo = window.location.pathname.replace(/^\/+/, '') + window.location.search + window.location.hash;
     window.location.replace(`/${redirectTo}`);
   </script>
 </body>

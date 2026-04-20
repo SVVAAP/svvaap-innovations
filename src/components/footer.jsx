@@ -50,6 +50,9 @@ const Footer = () => {
             <li><a href="/#services" className="transition-colors hover:text-white">AI Integration</a></li>
             <li><a href="/#services" className="transition-colors hover:text-white">UX and Visual Systems</a></li>
             <li><a href="/#industries" className="transition-colors hover:text-white">Industry Solutions</a></li>
+            <li><a href="/software-development-company-udupi" className="transition-colors hover:text-white">Udupi Software Company</a></li>
+            <li><a href="/software-development-company-manipal" className="transition-colors hover:text-white">Manipal Software Company</a></li>
+            <li><a href="/budget-friendly-web-app-developers-udupi-manipal" className="transition-colors hover:text-white">Budget Web/App Developers</a></li>
           </ul>
         </div>
 

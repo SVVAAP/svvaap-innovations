@@ -68,13 +68,13 @@ function Home() {
               </p>
 
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight text-[#0a1324] sm:text-5xl lg:text-6xl">
-                A modern technology partner for ambitious companies.
+                Software Development Company in Udupi and Manipal for web, app, and AI products.
               </h1>
 
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#374153]">
-                Svvaap Innovations helps businesses move from idea to scale with product engineering,
-                AI capabilities, and design systems. We bring global execution standards with the
-                discipline, warmth, and trust inspired by Karnataka's coastal culture.
+                Svvaap Innovations is a budget-friendly software development company in Udupi, Manipal,
+                and Karnataka. We help startups and growing businesses launch fast with reliable web
+                development, mobile app development, and custom AI-powered software solutions.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -91,6 +91,13 @@ function Home() {
                   className="inline-flex items-center rounded-full border border-[#c9cdc2] bg-white px-6 py-3 text-sm font-semibold text-[#1b2b3f] transition hover:bg-[#eef1ea]"
                 >
                   Explore Capabilities
+                </a>
+
+                <a
+                  href="/21xengineers"
+                  className="inline-flex items-center rounded-full border border-[#c9cdc2] bg-white px-6 py-3 text-sm font-semibold text-[#1b2b3f] transition hover:bg-[#eef1ea]"
+                >
+                  Explore 21xEngineers
                 </a>
               </div>
 
@@ -189,6 +196,38 @@ function Home() {
               into technology delivery: clarity in communication, consistency in quality, and respect for every stakeholder.
               This balance of heritage and innovation helps us build products that scale without losing human connection.
             </p>
+          </div>
+        </section>
+
+        <section id="local-seo" className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-4xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0f6d5e]">Local Software Partner</p>
+              <h2 className="mt-3 text-3xl font-semibold text-[#0a1324] sm:text-4xl">
+                Looking for budget-friendly web and app developers in Udupi or Manipal?
+              </h2>
+              <p className="mt-5 text-[#4f5c71] leading-relaxed">
+                Our local delivery team supports companies in Udupi and Manipal with end-to-end software
+                development, from requirement discovery and UX to deployment and long-term support.
+                Whether you need a business website, e-commerce platform, custom CRM, or mobile app,
+                Svvaap Innovations provides practical execution with transparent pricing.
+              </p>
+              <p className="mt-4 text-[#4f5c71] leading-relaxed">
+                We also run <a href="https://21xengineers.svvaap.in" className="font-semibold text-[#0f6d5e] hover:text-[#0a4a3f]">21xEngineers</a>,
+                our technology platform focused on AI and innovation updates.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href="/software-development-company-udupi" className="rounded-full border border-[#c9cdc2] bg-[#f9faf8] px-5 py-3 text-sm font-semibold text-[#1b2b3f] transition hover:bg-[#eef1ea]">
+                  Software Company in Udupi
+                </a>
+                <a href="/software-development-company-manipal" className="rounded-full border border-[#c9cdc2] bg-[#f9faf8] px-5 py-3 text-sm font-semibold text-[#1b2b3f] transition hover:bg-[#eef1ea]">
+                  Software Company in Manipal
+                </a>
+                <a href="/budget-friendly-web-app-developers-udupi-manipal" className="rounded-full border border-[#c9cdc2] bg-[#f9faf8] px-5 py-3 text-sm font-semibold text-[#1b2b3f] transition hover:bg-[#eef1ea]">
+                  Budget Web/App Developers
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -41,11 +41,12 @@ const TwentyOneXEngineers = () => {
             <TrendingUp className="w-5 h-5" />
             Featured Tech News Platform
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Meet <span className="text-blue-600">21xEngineers</span>
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Your premier destination for cutting-edge tech news, robotics insights, and AI innovation coverage
+            21xEngineers is a technology media platform by Svvaap Innovations covering AI, robotics,
+            and software innovation for builders in Udupi, Manipal, Karnataka, and beyond.
           </p>
         </div>
 
