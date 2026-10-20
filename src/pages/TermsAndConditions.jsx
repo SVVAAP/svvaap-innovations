@@ -1,16 +1,14 @@
 import React from 'react';
-import Navbar from '../components/NavBar';
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-white shadow-lg rounded-lg p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Terms and Conditions</h1>
+    <div className="bg-paper">
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 pt-32 pb-24 sm:pt-40">
+        <div className="bg-white border border-line rounded-3xl p-6 sm:p-12">
+          <h1 className="text-4xl font-semibold text-ink mb-4">Terms and Conditions</h1>
           
           <div className="prose prose-lg max-w-none">
-            <p className="text-sm text-gray-600 mb-6">Last updated: {new Date().toLocaleDateString()}</p>
+            <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted mb-8">Last updated: 6 October 2026</p>
             
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h2>

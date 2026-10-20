@@ -1,6 +1,5 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
 import './App.css';
 import About from './components/About.jsx';
 import Careers from './components/Careers.jsx';
@@ -13,30 +12,38 @@ import NoPage from "./pages/NoPage.jsx";
 import TermsAndConditions from "./pages/TermsAndConditions.jsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
-import PaymentDemo from "./pages/PaymentDemo.jsx";
-import Ideogram from './components/ideogram/HomeIG.jsx';
-import IGLogin from './components/ideogram/components/Login.jsx';
-import Loader from './components/Loader';
 import Projects from './components/Clientsprojects.jsx';
 import "./index.css";
-import ContactBar from './components/ContactBar.jsx';
+import Layout from './components/site/Layout.jsx';
 import SEO from './components/SEO.jsx';
 import TwentyOneXEngineers from './components/21xengineers.jsx';
 import SoftwareDevelopmentUdupi from './pages/SoftwareDevelopmentUdupi.jsx';
 import SoftwareDevelopmentManipal from './pages/SoftwareDevelopmentManipal.jsx';
 import BudgetWebAppDevelopers from './pages/BudgetWebAppDevelopers.jsx';
 
+// Standalone apps are loaded on demand so the marketing pages stay light.
+const PaymentDemo = lazy(() => import('./pages/PaymentDemo.jsx'));
+const Ideogram = lazy(() => import('./components/ideogram/HomeIG.jsx'));
+const IGLogin = lazy(() => import('./components/ideogram/components/Login.jsx'));
+const AdminPage = lazy(() => import('./pages/admin.jsx'));
+
 const routeSeoMap = {
   "/": {
-    title: "Software Development Company in Udupi, Manipal | Svvaap Innovations",
+    title: "Svvaap Innovations | Technology Group & Software Company in Udupi, Manipal",
     description:
-      "Svvaap Innovations is a software development company in Udupi and Manipal, Karnataka. We build budget-friendly websites, mobile apps, and custom software for startups and businesses.",
+      "Svvaap Innovations is a Udupi-based technology group and parent company of 21xEngineers, Sen10 Games and Star Labs, building SaaS products like MenuCraft and BizKitOps, games, and custom web and app software.",
     keywords:
       "software company in udupi, software company in manipal, software development company in karnataka, budget friendly web developers udupi, app developers manipal, custom software development udupi",
     schema: {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "Organization",
       name: "Svvaap Innovations",
+      foundingDate: "2021",
+      subOrganization: [
+        { "@type": "Organization", name: "21xEngineers", url: "https://21xengineers.svvaap.in" },
+        { "@type": "Organization", name: "Sen10 Games", url: "https://sen10games.in" },
+        { "@type": "Organization", name: "Star Labs" }
+      ],
       url: "https://www.svvaap.in",
       image: "https://www.svvaap.in/img/21xE_social.png",
       description:
@@ -107,19 +114,34 @@ const routeSeoMap = {
     keywords:
       "software development projects udupi, web app portfolio karnataka"
   },
+  "/team": {
+    title: "Team | Svvaap Innovations",
+    description: "Meet the founders and team behind Svvaap Innovations, 21xEngineers, Sen10 Games and Star Labs.",
+    keywords: "svvaap innovations team, srujan moolya, anup nayak"
+  },
+  "/careers": {
+    title: "Careers | Svvaap Innovations",
+    description: "Join Svvaap Innovations in Udupi. Build SaaS products, games and client software with a small team that ships.",
+    keywords: "software jobs udupi, developer jobs manipal, svvaap careers"
+  },
+  "/ventures": {
+    title: "Ventures | Companies, Products and Brands of Svvaap Innovations",
+    description: "Every company, product and brand in the Svvaap Innovations group: 21xEngineers, Sen10 Games, Star Labs, MenuCraft, BizKitOps and more.",
+    keywords: "svvaap ventures, menucraft, bizkitops, sen10 games, 21xengineers"
+  },
   "/startup": {
-    title: "Startup Solutions and Ventures | Svvaap Innovations",
+    title: "Ventures | Companies, Products and Brands of Svvaap Innovations",
     description:
-      "Discover startup-focused product development and digital launch support from Svvaap Innovations in Udupi and Manipal.",
+      "Every company, product and brand in the Svvaap Innovations group: 21xEngineers, Sen10 Games, Star Labs, MenuCraft, BizKitOps and more.",
     keywords:
       "startup development company udupi, mvp development manipal"
   },
   "/21xengineers": {
-    title: "21xEngineers | Tech Media and Innovation Platform by Svvaap",
+    title: "21xEngineers | Software Products & Engineering | A Svvaap Innovations Company",
     description:
-      "21xEngineers by Svvaap covers AI, robotics, and technology innovation. Visit 21xengineers.svvaap.in for updates and collaboration.",
+      "21xEngineers is the software company of Svvaap Innovations. It builds and runs MenuCraft, BizKitOps and other SaaS products, and engineers web, mobile and SaaS platforms for clients.",
     keywords:
-      "21xengineers, 21xengineers svvaap, 21xengineers udupi, tech news platform karnataka",
+      "21xengineers, 21xengineers svvaap, 21xengineers udupi, saas company udupi, menucraft, bizkitops",
     schema: {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -146,6 +168,11 @@ const routeSeoMap = {
     title: "Refund Policy | Svvaap Innovations",
     description: "Read the refund policy of Svvaap Innovations.",
     keywords: "svvaap refund policy"
+  },
+  "/admin": {
+    title: "Admin Panel | Svvaap Innovations",
+    description: "Internal admin panel for Svvaap Innovations.",
+    keywords: "svvaap admin"
   }
 };
 
@@ -165,54 +192,43 @@ function RouteSEO() {
       keywords={seo.keywords}
       path={currentPath}
       schema={seo.schema}
-      noindex={currentPath === "*"}
+      noindex={currentPath === "*" || currentPath === "/admin"}
     />
   );
 }
 
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // Hide loader after 2 seconds
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) return <Loader />; // Show loading screen while initializing
-
-
   return (
     <Router>
       <RouteSEO />
-      <ContactBar phone="7899535703" whatsappNumber="7899535703" />
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/Team" element={<TeamMembers />} />
-        <Route path="/Careers" element={<Careers />} />
-        <Route path="/startup" element={<Startup />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/21xengineers" element={<TwentyOneXEngineers />} />
-        <Route path="/software-development-company-udupi" element={<SoftwareDevelopmentUdupi />} />
-        <Route path="/software-development-company-manipal" element={<SoftwareDevelopmentManipal />} />
-        <Route path="/budget-friendly-web-app-developers-udupi-manipal" element={<BudgetWebAppDevelopers />} />
-        {/* Payment Demo */}
-        <Route path="/payment-demo" element={<PaymentDemo />} />
-        {/* Legal Pages */}
-        <Route path="/terms" element={<TermsAndConditions />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/refund" element={<RefundPolicy />} />
-        {/* ideogram links  */}
-        <Route path="/ideogram" element={<Ideogram />} />
-        <Route path="/ideogram/login" element={<IGLogin />} />
-        <Route path="*" element={<NoPage />} />
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/team" element={<TeamMembers />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/startup" element={<Startup />} />
+          <Route path="/ventures" element={<Startup />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/21xengineers" element={<TwentyOneXEngineers />} />
+          <Route path="/software-development-company-udupi" element={<SoftwareDevelopmentUdupi />} />
+          <Route path="/software-development-company-manipal" element={<SoftwareDevelopmentManipal />} />
+          <Route path="/budget-friendly-web-app-developers-udupi-manipal" element={<BudgetWebAppDevelopers />} />
+          {/* Legal pages */}
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/refund" element={<RefundPolicy />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+        {/* Standalone apps keep their own chrome */}
+        <Route path="/payment-demo" element={<Suspense fallback={null}><PaymentDemo /></Suspense>} />
+        <Route path="/ideogram" element={<Suspense fallback={null}><Ideogram /></Suspense>} />
+        <Route path="/ideogram/login" element={<Suspense fallback={null}><IGLogin /></Suspense>} />
+        <Route path="/admin" element={<Suspense fallback={null}><AdminPage /></Suspense>} />
       </Routes>
     </Router>
   );

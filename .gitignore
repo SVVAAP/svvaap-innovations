@@ -7,16 +7,37 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+
+# Build output
 dist
 dist-ssr
+build
+.vite
+
+# Environment variables (contain the Convex URL and admin PIN).
+# .env.example stays tracked as the template.
+.env
+.env.*
+!.env.example
 *.local
+
+# Deployment & tooling caches
+.vercel
+.convex
+.eslintcache
+coverage
+
+# Local AI assistant settings (per machine)
+.claude/settings.local.json
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj

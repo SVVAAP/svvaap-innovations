@@ -1,73 +1,131 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from './NavBar';
-import Footer from './footer';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { BRANDS, COMPANIES, CONTACT, PRODUCTS, RESEARCH } from '../data/group';
+import { ButtonLink, Container, Eyebrow, LogoTile, NewBadge, PageHeader, Reveal } from './site/ui';
 
+function Group({ eyebrow, title, children }) {
+  return (
+    <section className="border-b border-line py-20">
+      <Container className="grid gap-10 lg:grid-cols-[1fr_2.2fr]">
+        <Reveal>
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h2 className="mt-5 text-3xl font-semibold">{title}</h2>
+        </Reveal>
+        <div className="grid gap-4 sm:grid-cols-2">{children}</div>
+      </Container>
+    </section>
+  );
+}
 
-const startups = [
-  {
-    name: "MenuCraft",
-    description: "A restaurant digital menu management system that helps restaurants create, manage, and print menus efficiently.",
-    image: "/assets/menucraft_logo.png",
-    url: "https://www.menucraft.in",
-  },
-  {
-    name: "Ideogram",
-    description: "A creative platform where users can share and generate unique ideas powered by AI.",
-    image: "/assets/ideogram_logo.png",
-    url: "https://www.ideogram.svvaap.in",
-  },
-  {
-    name: "Sen10Games",
-    description: "A gaming studio focused on creating immersive and engaging mobile and PC games.",
-    image: "/assets/sen10games_logo.png",
-    url: "#",
-  },
-  {
-    name: "N9 Clothing",
-    description: "A modern clothing brand that blends fashion with innovative designs.",
-    image: "/assets/n9clothing_logo.png",
-    url: "#",
-  },
-];
+function Card({ href, children }) {
+  const cls = 'group flex h-full gap-5 rounded-2xl border border-line bg-white p-6 transition-colors';
+  if (!href) return <div className={cls}>{children}</div>;
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`${cls} hover:border-ink/30`}>
+      {children}
+    </a>
+  );
+}
 
 const Startup = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Navbar */}
-     <Navbar />
+    <>
+      <PageHeader
+        eyebrow="Ventures"
+        title="Every company, product and brand in the group."
+        intro="Ideas start as products inside Svvaap. The ones that find their market grow into companies and brands of their own."
+      />
 
-      {/* Hero Section */}
-      <header className="text-center py-20 bg-gray-100">
-        <h2 className="text-4xl font-bold">Our Startups</h2>
-        <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-          We are building innovative startups that shape the future of technology, gaming, and fashion.
-        </p>
-      </header>
-
-      {/* Startups Grid */}
-      <section className="container mx-auto px-6 py-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {startups.map((startup, index) => (
-          <div key={index} className="bg-white p-6 shadow-lg rounded-lg text-center">
-            <img src={startup.image} alt={startup.name} className="h-20 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold">{startup.name}</h3>
-            <p className="text-gray-600 mt-2">{startup.description}</p>
-            <a href={startup.url} target="_blank" rel="noopener noreferrer" className="block mt-4 text-blue-500 hover:underline">
-              Visit {startup.name}
-            </a>
-          </div>
+      <Group eyebrow="Companies" title="Operating companies">
+        {COMPANIES.map((c, i) => (
+          <Reveal key={c.key} delay={i * 60}>
+            <Card href={c.url}>
+              <LogoTile logo={c.logo} monogram={c.monogram} name={c.name} tile={c.tile} size="h-14 w-14" />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-semibold">{c.name}</h3>
+                  {c.url ? (
+                    <ArrowUpRight className="h-4 w-4 text-muted group-hover:text-ink" aria-hidden />
+                  ) : (
+                    <span className="font-mono text-[11px] text-muted">{c.status}</span>
+                  )}
+                </div>
+                <p className="text-sm text-muted">{c.role}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink/75">{c.summary}</p>
+              </div>
+            </Card>
+          </Reveal>
         ))}
-      </section>
+      </Group>
 
-      {/* Call to Action */}
-      <section className="text-center py-16 bg-blue-500 text-white">
-        <h2 className="text-3xl font-bold">Partner With Us</h2>
-        <p className="mt-4 text-lg">Looking to invest or collaborate? Get in touch with us today!</p>
-        <Link to="/contact" className="mt-6 inline-block bg-white text-blue-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Contact Us</Link>
-      </section>
+      <Group eyebrow="Products" title="Live software products">
+        {PRODUCTS.map((p, i) => (
+          <Reveal key={p.name} delay={(i % 2) * 60}>
+            <Card href={p.url}>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                    {p.category}
+                    {p.isNew && <NewBadge />}
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 text-muted group-hover:text-ink" aria-hidden />
+                </div>
+                <h3 className="mt-3 font-semibold">{p.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink/75">{p.summary}</p>
+                <p className="mt-3 font-mono text-xs text-muted">{p.domain}</p>
+              </div>
+            </Card>
+          </Reveal>
+        ))}
+      </Group>
 
-      <Footer />
-    </div>
+      <Group eyebrow="Research" title="Star Labs prototypes">
+        {RESEARCH.map((r, i) => (
+          <Reveal key={r.name} delay={i * 60}>
+            <Card>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{r.category}</span>
+                  <span className="font-mono text-[11px] text-muted">Prototype</span>
+                </div>
+                <h3 className="mt-3 font-semibold">{r.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink/75">{r.summary}</p>
+                <p className="mt-3 font-mono text-xs text-muted">{r.stack.join(' · ')}</p>
+              </div>
+            </Card>
+          </Reveal>
+        ))}
+      </Group>
+
+      <Group eyebrow="Brands" title="Consumer & creative brands">
+        {BRANDS.map((b, i) => (
+          <Reveal key={b.name} delay={i * 60}>
+            <Card>
+              <LogoTile logo={b.logo} name={b.name} size="h-14 w-14" />
+              <div>
+                <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{b.category}</span>
+                <h3 className="mt-1 font-semibold">{b.name}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-ink/75">{b.summary}</p>
+              </div>
+            </Card>
+          </Reveal>
+        ))}
+      </Group>
+
+      <section className="py-24">
+        <Container>
+          <Reveal className="flex flex-col items-start justify-between gap-6 rounded-[2rem] bg-ink p-8 text-white sm:p-14 lg:flex-row lg:items-center">
+            <div>
+              <h2 className="text-3xl font-semibold sm:text-4xl">Partner or invest with us</h2>
+              <p className="mt-3 max-w-xl text-white/60">Distribution, co-building and investment conversations go straight to the founders.</p>
+            </div>
+            <ButtonLink to={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Partnership enquiry')}`} variant="light" arrow>
+              Talk to the founders
+            </ButtonLink>
+          </Reveal>
+        </Container>
+      </section>
+    </>
   );
 };
 

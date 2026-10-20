@@ -1,150 +1,126 @@
-import React, { useState } from "react";
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import React, { useState } from 'react';
+import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { CONTACT, whatsapp } from '../data/group';
+import { Container, PageHeader, Reveal } from './site/ui';
+
+const topics = ['A new project', 'MenuCraft or BizKitOps', 'Partnership or investment', 'Careers', 'Something else'];
+
+const field =
+  'mt-2 w-full rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-colors focus:border-ink focus:bg-white focus:outline-none';
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({ name: '', email: '', topic: topics[0], message: '' });
+  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const whatsAppNumber = "+917899535703"; // WhatsApp number
-
+  // The form hands off to WhatsApp with the details pre-filled; nothing is stored on our side.
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!name || !email || !message) {
-      alert("Please fill in all fields before sending.");
-      return;
-    }
-
-    // Format the WhatsApp message
-    const whatsAppMessage = `*Contact Form Submission*\n\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
-    const whatsAppURL = `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(whatsAppMessage)}`;
-
-    // Redirect to WhatsApp with the message
-    window.open(whatsAppURL, "_blank");
+    const text = `*New enquiry — ${form.topic}*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n\n${form.message}`;
+    window.open(whatsapp(text), '_blank', 'noopener,noreferrer');
   };
 
+  const channels = [
+    { icon: MessageCircle, label: 'WhatsApp', value: CONTACT.phone, href: whatsapp('Hello Svvaap Innovations!') },
+    { icon: Phone, label: 'Phone', value: CONTACT.phone, href: `tel:+${CONTACT.phoneRaw}` },
+    { icon: Mail, label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+    { icon: MapPin, label: 'Office', value: CONTACT.address },
+  ];
+
   return (
-    <div id="contact" className="bg-[#f7f6f1] px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#0f6d5e]">Let's Talk</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#0a1324] sm:text-4xl">Ready to start your next project?</h2>
-          <p className="mt-4 text-[#4f5c71]">
-            Connect with our team to discuss ideas, timelines, and how we can partner for success.
-          </p>
-        </div>
+    <>
+      <PageHeader
+        eyebrow="Contact"
+        title="Let’s talk."
+        intro="Projects, products, partnerships or careers. Tell us what you have in mind and the right person from the group will reply."
+      />
 
-        {/* Contact Cards */}
-        <div className="mb-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {/* Phone */}
-          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
-            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
-              <PhoneIcon className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Phone</h3>
-            <p className="mt-2 text-xs text-[#7a8a9f]">Available Mon–Fri, 9am–6pm IST</p>
-            <a
-              href={`https://wa.me/${whatsAppNumber}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center text-sm font-semibold text-[#0f6d5e] hover:text-[#0a4a3f]"
-            >
-              +91 7899535703 →
-            </a>
-          </div>
-
-          {/* Email */}
-          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
-            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
-              <EnvelopeIcon className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Email</h3>
-            <p className="mt-2 text-xs text-[#7a8a9f]">We respond within 24 hours</p>
-            <a
-              href="mailto:workwithsvvaap@gmail.com"
-              className="mt-3 inline-flex items-center text-sm font-semibold text-[#0f6d5e] hover:text-[#0a4a3f]"
-            >
-              workwithsvvaap@gmail.com →
-            </a>
-          </div>
-
-          {/* Office */}
-          <div className="rounded-2xl border border-[#d4d5d8] bg-white p-8 shadow-[0_10px_24px_rgba(14,24,42,0.06)] transition hover:shadow-[0_16px_36px_rgba(14,24,42,0.1)]">
-            <div className="inline-flex rounded-xl bg-[#eef8f6] p-3 text-[#0f6d5e]">
-              <MapPinIcon className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold text-[#0f1a2f]">Office</h3>
-            <p className="mt-2 text-xs text-[#7a8a9f]">Visit us in the temple city</p>
-            <p className="mt-3 text-sm font-semibold text-[#0f1a2f]">
-              Udupi, Karnataka<br />India - 576101
+      <section className="py-24">
+        <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <Reveal>
+            <ul className="divide-y divide-line border-y border-line">
+              {channels.map((c) => {
+                const body = (
+                  <>
+                    <c.icon className="h-5 w-5 shrink-0 text-muted" strokeWidth={1.5} aria-hidden />
+                    <span className="hidden w-24 shrink-0 font-mono text-xs uppercase tracking-[0.16em] text-muted sm:block">{c.label}</span>
+                    <span className="min-w-0 break-all font-medium sm:break-words">{c.value}</span>
+                  </>
+                );
+                return (
+                  <li key={c.label}>
+                    {c.href ? (
+                      <a
+                        href={c.href}
+                        {...(c.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                        className="flex items-center gap-4 py-5 transition-opacity hover:opacity-70"
+                      >
+                        {body}
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-4 py-5">{body}</div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="mt-8 max-w-sm text-sm leading-relaxed text-muted">
+              Already a MenuCraft or BizKitOps customer? Pick that topic in the form and we’ll route you straight to the
+              product team.
             </p>
-          </div>
-        </div>
+          </Reveal>
 
-        {/* Contact Form */}
-        <div className="mx-auto max-w-2xl rounded-3xl border border-[#d0d1ca] bg-white p-8 shadow-lg sm:p-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-[#0f1a2f]">
-                Your Name
+          <Reveal delay={100}>
+            <form onSubmit={handleSubmit} className="rounded-3xl border border-line bg-white p-6 sm:p-10">
+              <h2 className="text-2xl font-semibold">Send us a message</h2>
+              <p className="mt-1 text-sm text-muted">Opens WhatsApp with your message ready to send.</p>
+
+              <div className="mt-8 grid gap-5 sm:grid-cols-2">
+                <label className="block text-sm font-medium">
+                  Name
+                  <input required value={form.name} onChange={update('name')} autoComplete="name" placeholder="Your name" className={field} />
+                </label>
+                <label className="block text-sm font-medium">
+                  Email
+                  <input required type="email" value={form.email} onChange={update('email')} autoComplete="email" placeholder="you@company.com" className={field} />
+                </label>
+              </div>
+
+              <fieldset className="mt-6">
+                <legend className="text-sm font-medium">What’s it about?</legend>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {topics.map((t) => (
+                    <label
+                      key={t}
+                      className={`cursor-pointer rounded-full border px-4 py-2 text-sm transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-signal ${
+                        form.topic === t ? 'border-ink bg-ink text-white' : 'border-line hover:border-ink/40'
+                      }`}
+                    >
+                      <input type="radio" name="topic" value={t} checked={form.topic === t} onChange={update('topic')} className="sr-only" />
+                      {t}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+
+              <label className="mt-6 block text-sm font-medium">
+                Message
+                <textarea required rows={5} value={form.message} onChange={update('message')} placeholder="A few lines about what you need" className={field} />
               </label>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                autoComplete="given-name"
-                placeholder="Firstname"
-                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
-                required
-              />
-            </div>
 
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-[#0f1a2f]">
-                Email Address
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="email"
-                placeholder="you@example.com"
-                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
-                required
-              />
-            </div>
-
-            {/* Message */}
-            <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-[#0f1a2f]">
-                Your Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder="Tell us about your project..."
-                className="mt-2 w-full rounded-xl border border-[#d7d8dc] bg-[#f9f8f6] px-4 py-2.5 text-sm text-[#0f1a2f] placeholder-[#9fb0cc] transition-colors focus:border-[#0f6d5e] focus:outline-none focus:ring-2 focus:ring-[#0f6d5e]/20"
-                required
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-[#0f6d5e] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:bg-[#0a4a3f]"
-            >
-              Send Message via WhatsApp
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+              <button
+                type="submit"
+                className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-ink text-sm font-medium text-white transition-transform hover:-translate-y-0.5"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden />
+                Send via WhatsApp
+              </button>
+              <p className="mt-3 text-center text-xs text-muted">
+                Prefer email? Write to <a href={`mailto:${CONTACT.email}`} className="underline underline-offset-2">{CONTACT.email}</a>
+              </p>
+            </form>
+          </Reveal>
+        </Container>
+      </section>
+    </>
   );
 }
